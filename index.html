@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Father's Day, Papa!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Animated Background */
+        body {
+            color: white;
+            background: linear-gradient(
+                -45deg,
+                #0f172a,
+                #1e3a8a,
+                #7c3aed,
+                #ec4899
+            );
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphic Container */
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Initial Setup Graphics */
+        .badge {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #ffffff, #fbcfe8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 30px;
+        }
+
+        /* Hidden Poem Frame */
+        .poem-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .poem-content.show {
+            max-height: 2500px;
+            opacity: 1;
+            margin-top: 10px;
+        }
+
+        /* Beautiful Poem Formatting */
+        .poem-line {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            font-weight: 400;
+        }
+
+        .poem-highlight {
+            color: #fbcfe8;
+            font-weight: 600;
+        }
+
+        .break {
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        /* Grand Father's Day Banner at bottom */
+        .final-wish {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            margin-top: 35px;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+            animation: pulse 2s infinite;
+            display: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Modern CTA Button */
+        .btn {
+            padding: 14px 40px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            background: #ffffff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(236, 72, 153, 0.5);
+            background: #fbcfe8;
+        }
+
+        /* Particle Engine Layer */
+        .particle {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+            animation: floatUp 7s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(105vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            50% { opacity: 0.6; }
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Front Splash View -->
+        <div id="initialHeading">
+            <span class="badge">Father's Day Special</span>
+            <h1>Papa, Ye Aapke Liye...</h1>
+            <p class="subtitle">A beautiful tribute to the real anchor of my life.</p>
+        </div>
+
+        <!-- The Poetry Box -->
+        <div id="poemContainer" class="poem-content">
+            <p class="poem-line">Aksar maa pr kavitaye aur gane sb likhte hai pr papa pr likhna thoda mushkil hota hai</p>
+            <p class="poem-line">Kyuki bina pyaar bataye pyaar jataye wo shaksh hai papa</p>
+            <p class="poem-line poem-highlight">Actions speaks louder than words ke example hai papa</p>
+            
+            <span class="break"></span>
+            
+            <p class="poem-line">Kyuki papa batate nhi krke dikhate hai</p>
+            
+            <span class="break"></span>
+            
+            <p class="poem-line">So bina pyaar bataye pyaar jataye wo hai papa</p>
+            <p class="poem-line poem-highlight">Action speaks louder than words ke example hai papa</p>
+            
+            <span class="break"></span>
+            
+            <p class="poem-line">Bina bole baat samajh jaaye wo shaksh hai papa</p>
+            <p class="poem-line">Aur boli Hui baat ko sach banaye wo shaksh hai papa</p>
+            
+            <span class="break"></span>
+            
+            <p class="poem-line">Papa hai to himmat hai hausla hai aur sb kr jaane ka jasba hai</p>
+            <p class="poem-line">Papa hai to daring hai papa hai to ladne ka josh hai papa h to attitude h aur <span class="poem-highlight">papa hai isliye mai unki princess hu</span></p>
+            
+            <span class="break"></span>
+            
+            <p class="poem-line">Papa sher hai to mai unki mini version hu aur papa hai isliye mai unki himmat wali sherni hu</p>
+            
+            <span class="break"></span>
+            
+            <p class="poem-line">Papa hai to duniya hai papa hai to mai hu</p>
+            <p class="poem-line">Maa hai to ghr hai papa h to maa ka ghr hai</p>
+            
+            <span class="break"></span>
+            
+            <p class="poem-line">Maa hai to laad hai papa hai to daat hai</p>
+            <p class="poem-line poem-highlight">Maa hai to ghr hai papa hai to jaahan hai</p>
+            <p class="poem-line poem-highlight">Papa hai to jaahan hai...</p>
+
+            <!-- Grand Finale Reveal -->
+            <div id="finalWish" class="final-wish">
+                Happy Father's Day! ❤️
+            </div>
+        </div>
+
+        <div>
+            <button class="btn" id="actionBtn" onclick="revealPoem()">Click Here for Message ❤️</button>
+        </div>
+    </div>
+
+    <script>
+        function revealPoem() {
+            const poem = document.getElementById('poemContainer');
+            const button = document.getElementById('actionBtn');
+            const heading = document.getElementById('initialHeading');
+            const finalWish = document.getElementById('finalWish');
+
+            // Hide introductory text, display full custom poem layout
+            heading.style.display = "none";
+            poem.classList.add('show');
+            finalWish.style.display = "block";
+            button.style.display = "none";
+
+            // Explode sudden confetti style heartburst elements
+            for (let i = 0; i < 30; i++) {
+                createParticle(true);
+            }
+        }
+
+        function createParticle(isBurst = false) {
+            const part = document.createElement('div');
+            part.classList.add('particle');
+            part.innerHTML = Math.random() > 0.4 ? '❤️' : '✨';
+            
+            part.style.left = Math.random() * 100 + 'vw';
+            part.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            
+            if (isBurst) {
+                part.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                part.style.top = (Math.random() * 40 + 50) + 'vh';
+            } else {
+                part.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            }
+
+            document.body.appendChild(part);
+
+            setTimeout(() => {
+                part.remove();
+            }, 6000);
+        }
+
+        // Standard slower loop to keep background active
+        setInterval(() => {
+            createParticle(false);
+        }, 400);
+    </script>
+</body>
+</html>
